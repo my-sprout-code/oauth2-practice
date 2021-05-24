@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:if="${session.user == null}"></div>
+    <div th:if="${session.user != null}">
+        <span th:text="${session.user.name}"></span>
+        <span th:text="${session.user.email}"></span>
+    </div>
+</body>
+</html>

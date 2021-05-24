@@ -11,6 +11,7 @@ import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import ssafy.com.kkyuwoo.happyhouse.auth.session.SessionUser;
+import ssafy.com.kkyuwoo.happyhouse.domain.user.Role;
 import ssafy.com.kkyuwoo.happyhouse.domain.user.User;
 import ssafy.com.kkyuwoo.happyhouse.domain.user.UserRepository;
 
@@ -61,9 +62,13 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
     private User saveOrUpdate(OAuthAttribute attributes) {
         User user = userRepository.findByEmail(attributes.getEmail())
-                .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
+                .map(entity -> updateProfile(attributes, entity))
                 .orElse(attributes.toEntity());
         return userRepository.save(user);
+    }
+
+    private User updateProfile(OAuthAttribute attributes, User entity) {
+        return entity.update(attributes.getName(), attributes.getEmail(), attributes.getPicture(), attributes.getSocialType());
     }
 
     @NotNull
