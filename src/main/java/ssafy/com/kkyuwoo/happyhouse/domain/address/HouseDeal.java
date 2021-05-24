@@ -17,43 +17,43 @@ public class HouseDeal {
     @Column(name = "no")
     private Integer no;
 
-    @Column(name = "dong")
+    @Column(name = "dong", length = 30, nullable = false)
     private String dong;
 
-    @Column(name = "AptName", length = 50)
+    @Column(name = "AptName", length = 50, nullable = false)
     private String aptName;
 
-    @Column(name = "code")
+    @Column(name = "code", length = 30, nullable = false)
     private String code;
 
-    @Column(name = "dealAmount")
+    @Column(name = "deal_amount", length = 50, nullable = false)
     private String dealAmount;
 
-    @Column(name = "buildYear")
+    @Column(name = "build_year", length = 30)
     private String buildYear;
 
-    @Column(name = "dealYear")
+    @Column(name = "deal_year", length = 30)
     private String dealYear;
 
-    @Column(name = "dealMonth")
+    @Column(name = "deal_month", length = 30)
     private String dealMonth;
 
-    @Column(name = "dealDay")
+    @Column(name = "deal_day", length = 30)
     private String dealDay;
 
-    @Column(name = "area")
+    @Column(name = "area", length = 30)
     private String area;
 
-    @Column(name = "floor")
+    @Column(name = "floor", length = 30)
     private String floor;
 
-    @Column(name = "jibun")
+    @Column(name = "jibun", length = 30)
     private String jibun;
 
-    @Column(name = "type")
+    @Column(name = "type", length = 30)
     private String type;
 
-    @Column(name = "rentMoney")
+    @Column(name = "rentMoney", length = 30)
     private String rentMoney;
 
     @Builder
