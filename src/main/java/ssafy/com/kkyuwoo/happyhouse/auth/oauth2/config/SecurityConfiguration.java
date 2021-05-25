@@ -17,7 +17,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable().headers().frameOptions().disable();
         http.authorizeRequests()
-                .antMatchers("/api/v1/**").hasRole(Role.USER.getKey())
+                .antMatchers("/api/v1/**").permitAll() // .hasRole(Role.USER.getKey())
                 .anyRequest().permitAll();
 
         http.oauth2Login()

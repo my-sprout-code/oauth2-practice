@@ -16,10 +16,10 @@ import javax.persistence.Table;
 public class GugunCode {
 
     @Id
-    @Column(name = "gugun_code")
+    @Column(name = "gugun_code", length = 10)
     private String gugunCode;
 
-    @Column(name = "gugun_name")
+    @Column(name = "gugun_name", length = 30)
     private String gugunName;
 
     @Builder

@@ -20,7 +20,7 @@ public class HouseDeal {
     @Column(name = "dong", length = 30, nullable = false)
     private String dong;
 
-    @Column(name = "AptName", length = 50, nullable = false)
+    @Column(name = "apt_name", length = 50, nullable = false)
     private String aptName;
 
     @Column(name = "code", length = 30, nullable = false)
@@ -53,7 +53,7 @@ public class HouseDeal {
     @Column(name = "type", length = 30)
     private String type;
 
-    @Column(name = "rentMoney", length = 30)
+    @Column(name = "rent_money", length = 30)
     private String rentMoney;
 
     @Builder

@@ -17,25 +17,25 @@ public class BaseAddress {
     @Column(name = "no")
     private Integer no;
 
-    @Column(name = "city", nullable = false)
+    @Column(name = "city", length = 30, nullable = false)
     private String city;
 
-    @Column(name = "code")
+    @Column(name = "code", length = 30)
     private String code;
 
-    @Column(name = "dongcode")
+    @Column(name = "dongcode", length = 30)
     private String dongCode;
 
-    @Column(name = "gugun")
+    @Column(name = "gugun", length = 30)
     private String gugun;
 
-    @Column(name = "dong", nullable = false)
+    @Column(name = "dong", length = 30, nullable = false)
     private String dong;
 
-    @Column(name = "lat")
+    @Column(name = "lat", length = 20)
     private String lat;
 
-    @Column(name = "lng")
+    @Column(name = "lng", length = 20)
     private String lng;
 
     @Builder
