@@ -3,13 +3,10 @@ package ssafy.com.kkyuwoo.happyhouse.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
-import ssafy.com.kkyuwoo.happyhouse.domain.address.BaseAddress;
-import ssafy.com.kkyuwoo.happyhouse.domain.address.DongCode;
-import ssafy.com.kkyuwoo.happyhouse.domain.address.GugunCode;
-import ssafy.com.kkyuwoo.happyhouse.domain.address.HouseDeal;
+import ssafy.com.kkyuwoo.happyhouse.domain.address.*;
 import ssafy.com.kkyuwoo.happyhouse.domain.address.repository.*;
 import ssafy.com.kkyuwoo.happyhouse.dto.GugunCodeResponseDto;
+import ssafy.com.kkyuwoo.happyhouse.dto.HouseInfoResponseDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.SidoCodeResponseDto;
 
 import java.util.List;
@@ -18,11 +15,13 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Service
 public class AddressServiceImpl {
+
     private final BaseAddressRepository baseAddressRepository;
     private final DongCodeRepository dongCodeRepository;
     private final GugunCodeRepository gugunCodeRepository;
     private final HouseDealRepository houseDealRepository;
     private final SidoCodeRepository sidoCodeRepository;
+    private final HouseInfoRepository houseInfoRepository;
 
     public List<BaseAddress> baseAddressList() {
         return baseAddressRepository.findAll();
@@ -53,8 +52,22 @@ public class AddressServiceImpl {
                 .collect(Collectors.toList());
     }
 
-//    public List<HouseInfoResponseDto> getDongByGugun(String gugun) {
-//        return ;
-//    }
+    public List<HouseInfoResponseDto> getDongByGugun(String gugun) {
+        return houseInfoRepository.findAllByCodeLike(gugun).stream()
+                .map(HouseInfoResponseDto::new)
+                .collect(Collectors.toList());
+    }
 
+    public List<HouseInfoResponseDto> getAptByDong(String dong) {
+        return houseInfoRepository.findAllByDongLike(dong).stream()
+                .map(HouseInfoResponseDto::new)
+                .collect(Collectors.toList());
+    }
+
+
+    public List<HouseInfoResponseDto> getAptByDongAndAptname(String dong, String aptName) {
+        return houseInfoRepository.findAllByDongLikeAndAptNameLike(dong, aptName).stream()
+                .map(HouseInfoResponseDto::new)
+                .collect(Collectors.toList());
+    }
 }

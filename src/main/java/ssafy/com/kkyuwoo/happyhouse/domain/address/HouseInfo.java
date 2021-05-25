@@ -1,7 +1,13 @@
 package ssafy.com.kkyuwoo.happyhouse.domain.address;
 
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
+@NoArgsConstructor
+@Getter
 @Table(name = "houseinfo")
 @Entity
 public class HouseInfo {
@@ -35,4 +41,16 @@ public class HouseInfo {
     @Column(name = "img", length = 50)
     private String img;
 
+    @Builder
+    public HouseInfo(Integer no, String dong, String aptName, String code, String buildYear, String jibun, String lat, String lng, String img) {
+        this.no = no;
+        this.dong = dong;
+        this.aptName = aptName;
+        this.code = code;
+        this.buildYear = buildYear;
+        this.jibun = jibun;
+        this.lat = lat;
+        this.lng = lng;
+        this.img = img;
+    }
 }

@@ -5,8 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import ssafy.com.kkyuwoo.happyhouse.domain.address.GugunCode;
 
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 public class GugunCodeResponseDto {
 
