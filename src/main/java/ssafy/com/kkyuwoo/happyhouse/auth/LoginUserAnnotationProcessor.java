@@ -15,6 +15,8 @@ import javax.servlet.http.HttpSession;
 @Component
 public class LoginUserAnnotationProcessor implements HandlerMethodArgumentResolver {
 
+    private static final String USER = "user";
+
     private final HttpSession session;
 
     @Override
@@ -26,7 +28,7 @@ public class LoginUserAnnotationProcessor implements HandlerMethodArgumentResolv
 
     @Override
     public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) {
-        return session.getAttribute("user");
+        return session.getAttribute(USER);
     }
 
 }
