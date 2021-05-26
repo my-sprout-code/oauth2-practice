@@ -14,8 +14,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/happyhouse?serverTimezone=UTC&characterEncoding=UTF-8
-    username: root
-    password: Wjd!5rbdnjs
+    username: ssafy
+    password: ssafy
   jpa:
     open-in-view: true
     show-sql: true

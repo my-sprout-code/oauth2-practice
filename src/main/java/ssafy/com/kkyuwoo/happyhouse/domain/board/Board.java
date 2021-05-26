@@ -1,6 +1,7 @@
 package ssafy.com.kkyuwoo.happyhouse.domain.board;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import ssafy.com.kkyuwoo.happyhouse.domain.user.User;
@@ -18,17 +19,21 @@ public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Board_ID")
+    @Column(name = "BOARD_ID")
     private Long id;
 
-    @Column(name = "Board_TITLE")
+    @Column(name = "BOARD_TITLE")
     private String title;
 
-    @Column(name = "Board_CONTENT")
+    @Column(name = "BOARD_CONTENT")
     private String content;
 
-    @Column(name = "Board_COUNT")
+    @Column(name = "BOARD_COUNT")
     private int count;
+
+    @Enumerated(EnumType.STRING)
+    @Column(name = "BOARD_TYPE")
+    private BoardType boardType;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
@@ -36,6 +41,17 @@ public class Board {
 
     @OneToMany(mappedBy = "board")
     private List<Comment> comments = new ArrayList<>();
+
+    @Builder
+    public Board(String title, String content, int count, BoardType boardType, User user, List<Comment> comments) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.count = count;
+        this.boardType = boardType;
+        this.user = user;
+        this.comments = comments;
+    }
 
     public Board countUpdate() {
         this.count++;

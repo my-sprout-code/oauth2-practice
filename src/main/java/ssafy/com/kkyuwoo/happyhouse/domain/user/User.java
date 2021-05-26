@@ -1,5 +1,6 @@
 package ssafy.com.kkyuwoo.happyhouse.domain.user;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,6 +8,7 @@ import ssafy.com.kkyuwoo.happyhouse.domain.BaseTimeEntity;
 
 import javax.persistence.*;
 
+@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Entity
@@ -34,10 +36,8 @@ public class User extends BaseTimeEntity {
     @Column(name = "USER_ROLE", nullable = false)
     private Role role;
 
-
     @Builder
-    public User(Long id, String name, String email, String picture, SocialType socialType, Role role) {
-        this.id = id;
+    public User(String name, String email, String picture, SocialType socialType, Role role) {
         this.name = name;
         this.email = email;
         this.picture = picture;
