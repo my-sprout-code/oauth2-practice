@@ -7,7 +7,7 @@
 				<img src = "../../assets/logo.png" width="40px" height="40px">
 			</b-navbar-brand>
 
-			<b-collapse  id="nav-collapse" is-nav>
+			<b-collapse id="nav-collapse" is-nav>
 				
 				<!-- Right aligned nav items -->
 				<b-navbar-nav class="ms-auto">
