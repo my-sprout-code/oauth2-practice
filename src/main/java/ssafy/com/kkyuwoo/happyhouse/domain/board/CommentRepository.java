@@ -1,4 +1,4 @@
-package ssafy.com.kkyuwoo.happyhouse.domain.qna;
+package ssafy.com.kkyuwoo.happyhouse.domain.board;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

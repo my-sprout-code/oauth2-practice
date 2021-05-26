@@ -1,4 +1,4 @@
-package ssafy.com.kkyuwoo.happyhouse.domain.qna;
+package ssafy.com.kkyuwoo.happyhouse.domain.board;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -27,8 +27,8 @@ public class Comment {
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "QNA_ID")
-    private QnA qnA;
+    @JoinColumn(name = "BOARD_ID")
+    private Board board;
 
     public Comment update(String content) {
         this.content = content;

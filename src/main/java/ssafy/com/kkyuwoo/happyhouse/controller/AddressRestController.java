@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
+import ssafy.com.kkyuwoo.happyhouse.dto.DongCodeResponseDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.GugunCodeResponseDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.HouseInfoResponseDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.SidoCodeResponseDto;
@@ -41,8 +42,7 @@ public class AddressRestController {
 
     @GetMapping("api/v1/dong/{gugun}")
     public ResponseEntity<?> dongGungun(@PathVariable(name = "gugun") String gugun) {
-        List<HouseInfoResponseDto> houseInfoDtos = addressService.getDongByGugun(gugun);
-        houseInfoDtos.stream().forEach(houseInfoResponseDto -> houseInfoResponseDto.getAptName());
+        List<DongCodeResponseDto> houseInfoDtos = addressService.getDongByGugun(gugun);
         if (houseInfoDtos == null || houseInfoDtos.isEmpty()) {
             return new ResponseEntity(HttpStatus.NO_CONTENT);
         }

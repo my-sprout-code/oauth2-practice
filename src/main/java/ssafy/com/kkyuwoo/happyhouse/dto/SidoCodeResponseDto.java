@@ -9,7 +9,7 @@ import ssafy.com.kkyuwoo.happyhouse.domain.address.SidoCode;
 public class SidoCodeResponseDto {
 
     private static final int BEGIN_INDEX = 0;
-    private static final int END_INDEX = 3;
+    private static final int END_INDEX = 2;
 
     private String sidoCode;
     private String sidoName;

@@ -1,4 +1,4 @@
-package ssafy.com.kkyuwoo.happyhouse.domain.qna;
+package ssafy.com.kkyuwoo.happyhouse.domain.board;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,37 +12,37 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@Table(name = "qna")
+@Table(name = "board")
 @Entity
-public class QnA {
+public class Board {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "QNA_ID")
+    @Column(name = "Board_ID")
     private Long id;
 
-    @Column(name = "QNA_TITLE")
+    @Column(name = "Board_TITLE")
     private String title;
 
-    @Column(name = "QNA_CONTENT")
+    @Column(name = "Board_CONTENT")
     private String content;
 
-    @Column(name = "QNA_COUNT")
+    @Column(name = "Board_COUNT")
     private int count;
 
     @ManyToOne
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    @OneToMany(mappedBy = "qnA")
+    @OneToMany(mappedBy = "board")
     private List<Comment> comments = new ArrayList<>();
 
-    public QnA countUpdate() {
+    public Board countUpdate() {
         this.count++;
         return this;
     }
 
-    public QnA update(String title, String content) {
+    public Board update(String title, String content) {
         this.title = title;
         this.content = content;
         return this;

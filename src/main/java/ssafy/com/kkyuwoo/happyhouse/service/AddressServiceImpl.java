@@ -5,6 +5,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import ssafy.com.kkyuwoo.happyhouse.domain.address.*;
 import ssafy.com.kkyuwoo.happyhouse.domain.address.repository.*;
+import ssafy.com.kkyuwoo.happyhouse.dto.DongCodeResponseDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.GugunCodeResponseDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.HouseInfoResponseDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.SidoCodeResponseDto;
@@ -52,9 +53,9 @@ public class AddressServiceImpl {
                 .collect(Collectors.toList());
     }
 
-    public List<HouseInfoResponseDto> getDongByGugun(String gugun) {
-        return houseInfoRepository.findAllByCodeLike(gugun).stream()
-                .map(HouseInfoResponseDto::new)
+    public List<DongCodeResponseDto> getDongByGugun(String gugun) {
+        return dongCodeRepository.findAllByDongCodeStartingWith(gugun).stream()
+                .map(DongCodeResponseDto::new)
                 .collect(Collectors.toList());
     }
 

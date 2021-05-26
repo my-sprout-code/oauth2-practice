@@ -4,16 +4,16 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import ssafy.com.kkyuwoo.happyhouse.domain.qna.QnA;
-import ssafy.com.kkyuwoo.happyhouse.domain.qna.QnARepository;
+import ssafy.com.kkyuwoo.happyhouse.domain.board.Board;
+import ssafy.com.kkyuwoo.happyhouse.domain.board.BoardRepository;
 
 @RequiredArgsConstructor
 @Service
 public class QnAService {
-    private final QnARepository qnARepository;
+    private final BoardRepository boardRepository;
 
-    public Page<QnA> findAll(Pageable pageable) {
-        return qnARepository.findAll(pageable);
+    public Page<Board> findAll(Pageable pageable) {
+        return boardRepository.findAll(pageable);
     }
 
 }
