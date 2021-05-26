@@ -9,7 +9,7 @@ import ssafy.com.kkyuwoo.happyhouse.domain.board.BoardRepository;
 
 @RequiredArgsConstructor
 @Service
-public class QnAService {
+public class BoardService {
     private final BoardRepository boardRepository;
 
     public Page<Board> findAll(Pageable pageable) {
