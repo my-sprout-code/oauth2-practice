@@ -48,9 +48,10 @@ export default new Vuex.Store({
     },
     ALLBOARD: (store) => {
       axios
-        .get("/api/v1/boards?type=자유게시판&size=10")
+        .get("/api/v1/boards?type=자유게시판")
         .then((response) => {
           store.commit("ALLBOARD", { boardlist: response.data });
+          // console.log("store에서 찍은 로그 " + this.boardlist);
         })
         .catch((response) => {
           console.log(response);
@@ -123,11 +124,11 @@ export default new Vuex.Store({
       state.donglist = payload.donglist;
     },
     ALLBOARD: (state, payload) => {
-      console.log("뮤테이션의 페이로드입니다." + payload);
+      console.log("뮤테이션 ALLBOARD 의 페이로드입니다." + payload);
       state.boardlist = payload.boardlist;
     },
     PAGEBOARD: (state, payload) => {
-      console.log("뮤테이션의 페이로드입니다." + payload);
+      console.log("뮤테이션 PAGEBOARD의 페이로드입니다." + payload);
       state.boardlist = payload.boardlist;
     },
     SHOWBOARD: (state, payload) => {

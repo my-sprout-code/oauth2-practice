@@ -10,8 +10,6 @@
 			<b-collapse id="nav-collapse" is-nav>
 				
 				<b-navbar-nav class="ms-auto" type="light" variant="light">
-					<b-nav-item href="/announcement">공지사항</b-nav-item>
-					<b-nav-item href="/QnAlist">Q&A</b-nav-item>
 					<b-nav-item href="/boardlist"> 게시판</b-nav-item>
 					<b-nav-item v-if="isLogin" href="http://localhost:8080/logout"> 로그아웃</b-nav-item>
 					<b-nav-item v-else href="/login"> 로그인</b-nav-item>
