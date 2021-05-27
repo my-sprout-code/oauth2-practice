@@ -11,8 +11,6 @@
 				
 				<!-- Right aligned nav items -->
 				<b-navbar-nav class="ms-auto" type="light" variant="light">
-					<b-nav-item href="/announcement">공지사항</b-nav-item>
-					<b-nav-item href="/QnAlist">Q&A</b-nav-item>
 					<b-nav-item href="/boardlist"> 게시판</b-nav-item>
 					<b-nav-item href="/login"> 로그인</b-nav-item>
 					<b-nav-item-dropdown text="언어" right>
