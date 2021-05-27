@@ -24,32 +24,9 @@
         img-src="https://picsum.photos/1024/480/?image=22"
       ></b-carousel-slide>
     </b-carousel>
-
-    <br> <br> <br>
-
+    <br><br><br>
     <h2>내 집을 마련할 위치를 검색해보세요</h2>
-    <br> <br>
-
-    <!-- <b-dropdown text="시/도" @change="inputSido">
-      <b-dropdown-item v-for="sido in sidos" :key="index">{{sidoName}}</b-dropdown-item>
-    </b-dropdown>&nbsp;
-
-    <b-dropdown>
-      <template #button-content>
-        구/군
-      </template>
-      <b-dropdown-item href="#">여기에 DB 받아오기</b-dropdown-item>
-      <b-dropdown-item href="#">강남구 강북구 등등</b-dropdown-item>
-    </b-dropdown>&nbsp;
-
-    <b-dropdown>
-      <template #button-content>
-        읍/면/동
-      </template>
-      <b-dropdown-item href="#">여기에 DB 받아오기</b-dropdown-item>
-      <b-dropdown-item href="#">목동, 가리봉동 등등</b-dropdown-item>
-    </b-dropdown>&nbsp; -->
-
+    <br><br>
     <div>
       <b-form-select @change="inputSido">
         <b-form-select-option v-for="(sido, index) in sidolist" :key="index" :value="sido.sidoCode">{{sido.sidoName}}</b-form-select-option>
@@ -65,43 +42,10 @@
 
       <b-button variant="outline-primary">검색</b-button>
     </div>
-    
-
-    <br> <br> <br>
-
+    <br><br><br>
     <h1> Team 뀨우는요.. </h1>
   </div>
-
-  
-
-  <!-- <div id="app">
-    <h2>내 집을 마련할 위치를 검색해보세요</h2>
-
-    <b-dropdown text="시/도" margin-right="10px">
-      <b-dropdown-item href="#">An item</b-dropdown-item>
-      <b-dropdown-item href="#">Another item</b-dropdown-item>
-    </b-dropdown>
-
-    <b-dropdown>
-      <template #button-content>
-        구/군
-      </template>
-      <b-dropdown-item href="#">An item</b-dropdown-item>
-      <b-dropdown-item href="#">Another item</b-dropdown-item>
-    </b-dropdown>
-
-    <b-dropdown>
-      <template #button-content>
-        읍/면/동
-      </template>
-      <b-dropdown-item href="#">An item</b-dropdown-item>
-      <b-dropdown-item href="#">Another item</b-dropdown-item>
-    </b-dropdown>
-    <b-button variant="outline-primary">검색</b-button>
-  </div> -->
-
 </template>
-
 <script>
   export default {
     methods: {
@@ -139,7 +83,6 @@
     }
   }
 </script>
-
 <style scoped>
   .body{
     padding-top :65px;

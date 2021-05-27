@@ -9,10 +9,17 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class BoardSaveRequestDto {
+public class CommentSaveRequestDto {
 
-    private String title;
+    private Long boardId;
     private String content;
-    private String type;
+
+    public Long getBoardId() {
+        return boardId;
+    }
+
+    public String getContent() {
+        return content;
+    }
 
 }

@@ -22,23 +22,14 @@ public class HappyhouseApplication {
     }
 
 //    @Bean
-//    public CommandLineRunner runner(UserRepository userRepository, BoardRepository boardRepository)
-//            throws Exception {
-//        User one = User.builder()
-//                .name("kwj")
-//                .email("kwj1270@ssssss.com")
-//                .picture("null")
-//                .socialType(SocialType.KAKAO)
-//                .role(Role.USER)
-//                .build();
-//        userRepository.save(one);
+//    public CommandLineRunner runner(UserRepository userRepository, BoardRepository boardRepository) {
+//        User user = userRepository.findByEmail("kwj1270@naver.com").get();
 //
 //        return (args) -> {
 //            IntStream.rangeClosed(1, 200).forEach(index -> {
 //                boardRepository.save(boardRepository.save(Board.builder()
-//                                .user(one)
+//                                .user(user)
 //                                .boardType(BoardType.FREE_BOARD)
-//                                .comments(null)
 //                                .content("하이 에이치 아이")
 //                                .title("60억 포켓몬스터 중 " + index + "번째가 남긴 글")
 //                                .count(0)

@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.Cascade;
+import ssafy.com.kkyuwoo.happyhouse.domain.BaseTimeEntity;
 import ssafy.com.kkyuwoo.happyhouse.domain.user.User;
 
 import javax.persistence.*;
@@ -15,7 +17,7 @@ import java.util.List;
 @Getter
 @Table(name = "board")
 @Entity
-public class Board {
+public class Board extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,18 +41,16 @@ public class Board {
     @JoinColumn(name = "USER_ID")
     private User user;
 
-    @OneToMany(mappedBy = "board")
+    @OneToMany(mappedBy = "board", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
 
     @Builder
-    public Board(String title, String content, int count, BoardType boardType, User user, List<Comment> comments) {
-        this.id = id;
+    public Board(String title, String content, int count, BoardType boardType, User user) {
         this.title = title;
         this.content = content;
         this.count = count;
         this.boardType = boardType;
         this.user = user;
-        this.comments = comments;
     }
 
     public Board countUpdate() {
