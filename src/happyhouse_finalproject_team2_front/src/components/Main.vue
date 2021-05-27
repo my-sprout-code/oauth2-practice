@@ -9,18 +9,16 @@
       img-height="480"
     >
       <b-carousel-slide
-        caption="사진 예쁜거 넣고"
-        img-src="https://picsum.photos/1024/480/?image=10"
+        caption="화려한 도심의 집"
+        :img-src="require('@/images/house/seoul.jpg')"
       ></b-carousel-slide>
       <b-carousel-slide
-        caption="당신의 집은 어디인가요?"
-        text = "이러면 되지 않을까?"
-        img-src="https://picsum.photos/1024/480/?image=12"
+        caption="자연과 맞닿은 집"
+        :img-src="require('@/images/house/park.jpg')"
       ></b-carousel-slide>
       <b-carousel-slide
-        caption="그냥 내 생각임"
-        text = "아님 말고"
-        img-src="https://picsum.photos/1024/480/?image=22"
+        caption="포근하고 아늑한 집"
+        :img-src="require('@/images/house/house.jpg')"
       ></b-carousel-slide>
     </b-carousel>
     <br><br><br>

@@ -60,6 +60,9 @@ export default {
 	.ms-auto {
 		margin-right: 50px;
 	}
+	.nav-link {
+		vertical-align: auto;
+	}
 	/* .ms-auto>b-nav-item {
 		margin-left: 10px;
 		margin-right: 10px;
