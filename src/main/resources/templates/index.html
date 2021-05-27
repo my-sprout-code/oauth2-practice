@@ -4,64 +4,26 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <input type="text" id="user" th:value="${session.user}" readonly>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
-<div th:replace="layout/header::header"></div>
-<h1> 대홍 왕 감자 </h1>
-
-<form action="api/v1/boards" method="post">
-    <input type="text" th:value="제목" name="title">
-    <input type="text" th:value="내용" name="content">
-    <input type="text" th:value="질의응답" name="type" readonly>
-    <input type="submit" value="전송">
-</form>
-
-<form action="api/v1/boards" method="post">
-    <input type="text" th:value="제목" name="title">
-    <input type="text" th:value="내용" name="content">
-    <input type="text" th:value="자유게시판" name="type" readonly>
-    <input type="submit" value="전송">
-</form>
-
-<form>
-    <input type="text" value="제목" name="title" id="title">
-    <input type="text" value="내용" name="content" id="content">
-    <button id="btn-update">업데이트</button>
-</form>
-
-<div th:replace="layout/footer::footer"></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 <script>
-    var main = {
-        init : function () {
-            var _this = this;
-            $('#btn-update').on('click', function(){
-                _this.update();
-            })
-        },
+    $( document ).ready(function() {
+        var name  = [[ ${session.user.name} ]];
+        var email  = [[ ${session.user.email} ]];
+        var picture  = [[ ${session.user.picture} ]];
 
-        update : function () {
-            var data = {
-                title: $('#title').val(),
-                content: $('#content').val(),
-                type: $('#type').val()
-            };
-            $.ajax({
-                type: 'PUT',
-                url: '/api/v1/boards/2',
-                dataType: 'json',
-                contentType: 'application/json; charset=utf-8',
-                data: JSON.stringify(data)
-            }).done(function(){
-                alert('글이 수정되었습니다.');
-                window.location.href = "/";
-            }).fail(function(error){
-                alert(JSON.stringify(error));
-            });
-        },
-    };
+        var user = {
+            name : name,
+            email : email,
+            picture : picture
+        }
 
-    main.init()</script>
+        sessionStorage.setItem("user", user);
+        window.location.href="http://localhost:8081/";
+    });
+</script>
 </body>
 </html>

@@ -2,10 +2,8 @@ package ssafy.com.kkyuwoo.happyhouse.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.springframework.data.annotation.LastModifiedDate;
 import ssafy.com.kkyuwoo.happyhouse.domain.board.Board;
 import ssafy.com.kkyuwoo.happyhouse.domain.board.BoardType;
-import ssafy.com.kkyuwoo.happyhouse.domain.board.Comment;
 import ssafy.com.kkyuwoo.happyhouse.domain.user.User;
 
 import java.time.LocalDateTime;
@@ -22,12 +20,11 @@ public class BoardResponseDto {
     private int count;
     private BoardType boardType;
     private User user;
-    private List<Comment> comments;
     private LocalDateTime createdDate;
     private LocalDateTime modifiedDate;
 
     public BoardResponseDto(Board board) {
-        this(board.getId(), board.getTitle(), board.getTitle(), board.getCount(), board.getBoardType(), board.getUser(), board.getComments(), board.getCreatedDate(), board.getModifiedDate());
+        this(board.getId(), board.getTitle(), board.getTitle(), board.getCount(), board.getBoardType(), board.getUser(),  board.getCreatedDate(), board.getModifiedDate());
     }
 
 }
