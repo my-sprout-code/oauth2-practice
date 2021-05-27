@@ -14,6 +14,7 @@ import ssafy.com.kkyuwoo.happyhouse.dto.BoardSaveRequestDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.BoardUpdateRequestDto;
 import ssafy.com.kkyuwoo.happyhouse.service.BoardServiceImpl;
 
+import java.util.List;
 import java.util.Objects;
 
 @CrossOrigin("*")
@@ -24,9 +25,9 @@ public class BoardRestController {
     private final BoardServiceImpl boardService;
 
     @GetMapping("api/v1/boards")
-    public ResponseEntity<?> boards(String type, Pageable pageable) {
+    public ResponseEntity<?> boards(String type) {
         BoardType boardType  = BoardType.of(type);
-        Page<Board> boards = boardService.findAllByBoardTypeLike(boardType, pageable);
+        List<Board> boards = boardService.findAllByBoardTypeLike(boardType);
         if(Objects.isNull(boards)) {
             return badRequest();
         }

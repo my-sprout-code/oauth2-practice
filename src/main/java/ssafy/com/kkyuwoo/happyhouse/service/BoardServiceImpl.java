@@ -15,6 +15,8 @@ import ssafy.com.kkyuwoo.happyhouse.dto.BoardResponseDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.BoardSaveRequestDto;
 import ssafy.com.kkyuwoo.happyhouse.dto.BoardUpdateRequestDto;
 
+import java.util.List;
+
 @RequiredArgsConstructor
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -22,8 +24,8 @@ public class BoardServiceImpl implements BoardService {
     private final UserRepository userRepository;
 
     @Transactional(readOnly = true)
-    public Page<Board> findAllByBoardTypeLike(BoardType boardType, Pageable pageable) {
-        return boardRepository.findAllByBoardTypeLike(boardType, pageable);
+    public List<Board> findAllByBoardTypeLike(BoardType boardType) {
+        return boardRepository.findAllByBoardTypeLike(boardType);
     }
 
     @Transactional
