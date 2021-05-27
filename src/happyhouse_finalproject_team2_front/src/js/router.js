@@ -9,6 +9,8 @@ import Login from "../components/Login.vue";
 import English from "../components/English.vue";
 import Main from "../components/Main.vue";
 import Board from "../components/Board.vue";
+import LoginProccess from "../components/LoginProcess.vue"
+import LogoutProccess from "../components/LogoutProccess.vue"
 
 Vue.use(VueRouter);
 
@@ -24,6 +26,9 @@ export default new VueRouter({
     { path: "/login", component: Login },
     { path: "/EN", component: English },
     { path: "/detail/:num", component: Board },
+    { path: "/loginProccess", component: LoginProccess },
+    { path: "/logoutProccess", component: LogoutProccess },
+
   ],
 });
 

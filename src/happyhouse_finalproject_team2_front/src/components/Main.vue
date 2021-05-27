@@ -64,7 +64,7 @@
       }
     },
     created(){
-      this.$store.dispatch("ALLSIDO");
+      this.$store.dispatch("ALLSIDO");        
     },
     computed: {
       sidolist() {

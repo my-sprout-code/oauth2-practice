@@ -6,11 +6,13 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
+
     sidolist: [],
     gugunlist: [],
     donglist: [],
     boardlist: [],
     board: [],
+    isLogin: false,
     // qnalist: [],
   },
   actions: {
@@ -131,5 +133,16 @@ export default new Vuex.Store({
     SHOWBOARD: (state, payload) => {
       state.board = payload.board;
     },
+    LOGIN: (state) => {
+      state.isLogin = true;
+    },
+    LOGOUT: (state) => {
+      state.isLogin = false;
+    },
   },
+  getters: {
+    loginstate(state) {
+      return state.isLogin;
+    }
+  }
 });

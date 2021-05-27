@@ -3,10 +3,10 @@
 <div>
   <b-card title="로그인" sub-title="1초면 간편하게! 로그인을 진행해보세요">
     <b-card-text>
-            <a class="btn_social" @click="facebookLogin"><b-img :src="require('../images/login/facebook_button.png')"/></a><br>
-            <a class="btn_social" @click="kakaoLogin"><b-img :src="require('../images/login/google_button.png')"/></a><br>
-            <a class="btn_social" @click="googleLogin"><b-img :src="require('../images/login/kakao_button.png')"/></a><br>
             <a class="btn_social" @click="naverLogin"><b-img :src="require('@/images/login/naver_button.png')"/></a><br>
+            <a class="btn_social" @click="kakaoLogin"><b-img :src="require('@/images/login/kakao_button.png')"/></a><br>
+            <a class="btn_social" @click="googleLogin"><b-img :src="require('@/images/login/google_button.png')"/></a><br>
+            <a class="btn_social" @click="facebookLogin"><b-img :src="require('@/images/login/facebook_button.png')"/></a><br>
     </b-card-text>
   </b-card>
 </div>

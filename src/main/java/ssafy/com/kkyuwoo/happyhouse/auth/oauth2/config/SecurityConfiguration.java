@@ -40,6 +40,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .userInfoEndpoint()
                 .userService(customOAuth2UserService);
-        http.logout();
+        http.logout()
+                .logoutUrl("/logout")
+                .logoutSuccessUrl("http://localhost:8081/logoutProccess");
     }
 }
