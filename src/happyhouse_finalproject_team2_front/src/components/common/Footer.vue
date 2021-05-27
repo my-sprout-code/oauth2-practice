@@ -12,7 +12,7 @@
       <br><br>
       <h2> HyperLink </h2><br>
       <ul>
-        <li class="me-lg-2"><a href = "https://land.naver.com/" target = "blank" > 네이버 부동산 </a></li>  <br>
+        <li><a href = "https://land.naver.com/" target = "blank" > 네이버 부동산 </a></li>  <br>
         <li><a href = "https://www.dabangapp.com/" target = "blank" > 다방 </a></li>  <br>
         <li><a href = "https://www.zigbang.com/" target = "blank" > 직방 </a></li>
       </ul>

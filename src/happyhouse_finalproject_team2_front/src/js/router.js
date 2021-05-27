@@ -1,52 +1,54 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+// import Home from "../components/Home.vue";
 
-import Announcement from "../views/Announcement.vue";
-import QnAlist from "../views/QnAlist.vue";
-import Board from "../views/Board.vue";
-import Login from "../views/Login.vue";
-import English from "../views/English.vue";
+import Announcement from "../components/Announcement.vue";
+import QnAlist from "../components/QnAlist.vue";
+import BoardList from "../components/BoardList.vue";
+import Login from "../components/Login.vue";
+import English from "../components/English.vue";
+import Main from "../components/Main.vue";
+import Board from "../components/Board.vue";
 
 Vue.use(VueRouter);
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home,
-  },
-  {
-    path: "/announcement",
-    name: "Announcement",
-    component: Announcement,
-  },
-  {
-    path: "/QnAlist",
-    name: "QnAlist",
-    component: QnAlist,
-  },
-  {
-    path: "/board",
-    name: "Board",
-    component: Board,
-  },
-  {
-    path: "/login",
-    name: "Login",
-    component: Login,
-  },
-  {
-    path: "/EN",
-    name: "English",
-    component: English,
-  },
-];
-
-const router = new VueRouter({
+export default new VueRouter({
   mode: "history",
-  base: process.env.BASE_URL,
-  routes,
+  routes: [
+    { path: "/", component: Main },
+    { path: "/main", component: Main },
+    { path: "/announcement", component: Announcement },
+    { path: "/QnAlist", component: QnAlist },
+    { path: "/boardlist", component: BoardList },
+    { path: "/login", component: Login },
+    { path: "/EN", component: English },
+    { path: "/detail/:num", component: Board },
+  ],
 });
 
-export default router;
+// const routes = [
+//   {
+//     path: "/",
+//     component: Home,
+//   },
+//   {
+//     path: "/announcement",
+//     component: Announcement,
+//   },
+//   {
+//     path: "/QnAlist",
+//     component: QnAlist,
+//   },
+//   {
+//     path: "/board",
+//     component: Board,
+//   },
+//   {
+//     path: "/login",
+//     component: Login,
+//   },
+//   {
+//     path: "/EN",
+//     component: English,
+//   },
+// ];

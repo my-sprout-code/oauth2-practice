@@ -4,7 +4,6 @@
       id="carousel-fade"
       style="text-shadow: 0px 0px 2px #000"
       fade
-      indicators
       :interval="4000"
       img-width="1024"
       img-height="480"
@@ -19,8 +18,8 @@
         img-src="https://picsum.photos/1024/480/?image=12"
       ></b-carousel-slide>
       <b-carousel-slide
-        caption="걍 내 생각임"
-        text = "근데 carousel은 꼭 적용하고 npm을 껐다가 다시 켜야하나 귀찮네"
+        caption="그냥 내 생각임"
+        text = "아님 말고"
         img-src="https://picsum.photos/1024/480/?image=22"
       ></b-carousel-slide>
     </b-carousel>
@@ -43,7 +42,7 @@
       <b-button variant="outline-primary">검색</b-button>
     </div>
     <br><br><br>
-    <h1> Team 뀨우는요.. </h1>
+    <h1>  </h1>
   </div>
 </template>
 <script>
@@ -85,6 +84,6 @@
 </script>
 <style scoped>
   .body{
-    padding-top :65px;
+    padding-top :0px;
   }
 </style>
